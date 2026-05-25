@@ -1,0 +1,13 @@
+.git/
+.gitignore
+.venv/
+.env
+
+__pycache__/
+*.py[codz]
+*.egg-info/
+dist/
+build/
+
+README.md
+LICENSE
