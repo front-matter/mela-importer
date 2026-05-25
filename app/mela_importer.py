@@ -12,10 +12,10 @@ import os
 import requests
 
 MEALIE_URL = os.environ["MEALIE_URL"]
-API_KEY = os.environ["MEALIE_API_KEY"]
+MEALIE_API_KEY = os.environ["MEALIE_API_KEY"]
 
 HEADERS = {
-    "Authorization": f"Bearer {API_KEY}",
+    "Authorization": f"Bearer {MEALIE_API_KEY}",
     "Content-Type": "application/json",
 }
 
@@ -80,7 +80,7 @@ def upload_image(slug: str, b64_image: str):
         with open(tmp_path, "rb") as f:
             requests.post(
                 f"{MEALIE_URL}/api/recipes/{slug}/images",
-                headers={"Authorization": f"Bearer {API_KEY}"},
+                headers={"Authorization": f"Bearer {MEALIE_API_KEY}"},
                 files={"image": ("image.jpg", f, "image/jpeg")},
             )
         os.unlink(tmp_path)
